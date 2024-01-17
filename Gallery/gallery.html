@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+
+    <div class="overlays" id="overlays"></div>
+
+    <main class="main">
+        <a class='btn-c' href="../index.html"><ion-icon name="arrow-back-outline"></ion-icon></a>
+
+
+        <ul class='slider'>
+            <li class='item' style="background-image: url('../Images/1.png')">
+                <div class='content'>
+                    <h2 class='title'>"Two worlds"</h2>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('../Images/2.png')">
+                <div class='content'>
+                    <h2 class='title'>"Still standing"</h2>
+
+                </div>
+            </li>
+            <li class='item' style="background-image: url('../Images/3.png')">
+                <div class='content'>
+                    <h2 class='title'>"Fear"</h2>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('../Images/4.png')">
+                <div class='content'>
+                    <h2 class='title'>"Red look"</h2>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('../Images/5.png')">
+                <div class='content'>
+                    <h2 class='title'>"Joy"</h2>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('../Images/6.png')">
+                <div class='content'>
+                    <h2 class='title'>Pen eye</h2>
+
+                </div>
+            </li>
+            <li class='item' style="background-image: url('../Images/7.png')">
+                <div class='content'>
+                    <h2 class='title'>"Scorn"</h2>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('../Images/8.png')">
+                <div class='content'>
+                    <h2 class='title'>"Samurai"</h2>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('../Images/9.png')">
+                <div class='content'>
+                    <h2 class='title'>"Red look"</h2>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('../Images/10.png')">
+                <div class='content'>
+                    <h2 class='title'>"Lie"</h2>
+                </div>
+            </li>
+            <li class='item' style="background-image: url('../Images/11.png')">
+                <div class='content'>
+                    <h2 class='title'>"Mockery"</h2>
+                </div>
+            </li>
+        </ul>
+        <nav class='nav'>
+            <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+            <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        const slider = document.querySelector('.slider');
+        const overlays = document.getElementById('overlays');
+        const sliderItems = document.querySelectorAll('.item');
+
+        function activate(e) {
+            const items = document.querySelectorAll('.item');
+            e.target.matches('.next') && slider.append(items[0]);
+            e.target.matches('.prev') && slider.prepend(items[items.length - 1]);
+            overlays.style.backgroundImage = items[2].style.backgroundImage;
+        }
+        overlays.style.backgroundImage = sliderItems[1].style.backgroundImage;
+
+        document.addEventListener('click', activate, false);</script>
+</body>
+
+</html>

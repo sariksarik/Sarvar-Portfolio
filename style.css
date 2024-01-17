@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.banner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px;
+    background: #fff;
+    transition: 0.5;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    color: #333;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+header .logo span {
+    color: #2196f3;
+
+}
+
+header ul {
+    display: flex;
+    gap: 40px;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #333;
+    transition: 0.5s;
+}
+
+.content {
+    position: relative;
+    max-width: 700px;
+    z-index: 100;
+}
+
+.content h3 {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 200;
+    transition: 0.5;
+}
+
+.content h2 span {
+    color: #e91e63;
+    font-size: 48px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 10px 0;
+    transition: 0.5s;
+}
+
+.content button {
+    position: relative;
+    background: #2196f3;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 15px 15px;
+    font-size: 1.25rem;
+    letter-spacing: 0.05rem;
+    margin-right: 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.content button.gallery {
+    background: transparent;
+    color: #333;
+}
+
+.content button.gallery ion-icon {
+    color: #e91e63;
+    position: relative;
+    top: 5px;
+    font-size: 1.5em;
+}
+
+.content button.gallery a {
+    text-decoration: none;
+    color: #333;
+}
+
+.sci {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+.sci li {
+    list-style: none;
+}
+
+.sci li a {
+    text-decoration: none;
+    font-size: 1.75em;
+    color: #333;
+
+}
+
+.sci li a:hover {
+    color: #2196f3;
+
+}
+
+.banner.night {
+    background: #333;
+}
+
+.dayNight {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 2rem;
+}
+
+.banner.night .dayNight {
+    background: #444;
+    color: #fff;
+}
+
+.banner.night header .logo,
+.banner.night .content h2,
+.banner.night .content h3,
+.banner.night .content p,
+.banner.night .content button.gallery,
+.banner.night .sci li a,
+.banner.night header ul li a,
+.banner.night .content button.gallery a,
+
+.banner.night {
+    color: white;
+}
+
+.dayNight ion-icon:nth-child(2) {
+    display: none;
+
+}
+
+.banner.night .dayNight ion-icon:nth-child(1) {
+    display: none;
+}
+
+.banner.night .dayNight ion-icon:nth-child(2) {
+    display: block;
+}
+
+
+.me {
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+    max-height: 100vh;
+    z-index: 10;
+    animation: animateMe 8s ease-in-out infinite;
+}
+
+/* @keyframes animateColor {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(50px);
+    }
+}
+
+@keyframes animateMe {
+
+    0%,
+    100% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(-50px);
+    }
+} */
+
+@media only screen and (max-width: 768px) {
+    .banner {
+        padding: 50px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .me {
+        max-height: 50vh;
+    }
+}
